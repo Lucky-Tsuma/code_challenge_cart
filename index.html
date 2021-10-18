@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="index.js"></script>
+  <title>XYZ Company</title>
+</head>
+<body>
+  <div class="content">
+    <div class="header">
+      <h1>XYZ Company</h1>
+    </div>
+    
+    <div class="carousel">
+      <!-- Slideshow container -->
+      <div class="slideshow-container fade">
+        
+        <!-- Full images with numbers and message caption -->
+        <div class="container initial">
+          <div class="image_number">1 / 7</div>
+          <img src="assets/carousel1.jpg" style="width:100%">
+          <div class="caption">First bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">2 / 7</div>
+          <img src="assets/carousel2.jpg" style="width:100%">
+          <div class="caption">Second bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">3 / 7</div>
+          <img src="assets/carousel3.jpg" style="width:100%">
+          <div class="caption">Third bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">4 / 7</div>
+          <img src="assets/carousel4.jpg" style="width:100%">
+          <div class="caption">Fourth bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">5 / 7</div>
+          <img src="assets/carousel5.jpg" style="width:100%">
+          <div class="caption">fifth bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">6 / 7</div>
+          <img src="assets/carousel6.jpg" style="width:100%">
+          <div class="caption">Sixth bed image.</div>
+        </div>
+        
+        <div class="container">
+          <div class="image_number">7 / 7</div>
+          <img src="assets/carousel7.jpg" style="width:100%">
+          <div class="caption">Seventh bed image.</div>
+        </div>
+        
+        <!-- Back and forward buttons -->
+        <a class="back" onclick="plusSlides(-1)">&laquo;</a> 
+        <a class="forward" onclick="plusSlides(1)">&raquo;</a>
+      </div>
+      <br>
+      
+      <!-- The circles/dots -->
+      <div style="text-align:center">
+        <span class="dots" onclick="currentSlide(1)"></span>
+        <span class="dots" onclick="currentSlide(2)"></span>
+        <span class="dots" onclick="currentSlide(3)"></span>
+        <span class="dots" onclick="currentSlide(4)"></span>
+        <span class="dots" onclick="currentSlide(5)"></span>
+        <span class="dots" onclick="currentSlide(6)"></span>
+        <span class="dots" onclick="currentSlide(7)"></span>
+      </div>
+    </div>
+    
+    <div class="cart">
+      <div class="card">
+        <div class="item1"></div>
+        <div class="details">
+          <h4><b>Bed 1</b></h4>
+          <p>Luxury king size bed. Best of the best.</p>
+          <p><b>Price: $1 each</b></p>
+          <div class="quantity">
+            <p>Quantity</p>
+            <input id = "product_id_1" type="number" min="0" style="width: 3em">
+          </div>
+          <button onclick = "getItem1Quantity()">Add to cart</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="item2"></div>
+        <div class="details">
+          <h4><b>Bed 2</b></h4>
+          <p>Quality king size bed. Simply the best.</p>
+          <p><b>Price: $3 each</b></p>
+          <div class="quantity">
+            <p>Quantity</p>
+            <input id = "product_id_2" type="number" min="0" style="width: 3em">
+          </div>
+          <button onclick = "getItem2Quantity()">Add to cart</button>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="item3"></div>
+        <div class="details">
+          <h4><b>Bed 3</b></h4>
+          <p>King size bamboo bed fully fitted.</p>
+          <p><b>Price: $5 each</b></p>
+          <div class="quantity">
+            <p>Quantity</p>
+            <input id = "product_id_3" type="number" min="0" style="width: 3em">
+          </div>
+          <button onclick = "getItem3Quantity()">Add to cart</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="div_purchase">
+      <button id = "btn_purchase">Purchase</button>
+    </div>
+  </div>
+</body>
+</html>
+
+

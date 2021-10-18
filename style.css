@@ -1,0 +1,206 @@
+body {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.content {
+    background-color: #e0ebeb;
+    display: grid;
+    width: 85%; 
+    grid-template-rows: 0.6fr 6fr 3.4fr 0.6fr;    
+}
+
+.header {
+    color:#476b6b;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.carousel {
+    margin: 0px 10px 10px 10px;
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px 10px 10px;
+    padding: 5px;
+}
+
+.card {
+    background-color: #669999;
+    border-radius: 10px;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card :hover {
+    box-shadow: 0px 10px 10px 0px #8c8c8c;
+}
+
+.item1, .item2, .item3{
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.item1 {
+    background-image: url("assets/image1.jpg");
+}
+
+.item2 {
+    background-image: url("assets/image2.jpg");
+}
+
+.item3 {
+    background-image: url("assets/image3.jpg");
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quantity {
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div_purchase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    background-color:#476b6b;
+    color: #ffffff;
+    text-align: center;
+    border-radius: 12px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 968px) {
+
+    .content {
+        grid-template-rows: 0.6fr 4fr 17fr 0.6fr;    
+    }
+
+    .cart {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* padding: 5px; */
+    }
+
+    .card {
+        height: 100%;
+        width: 100%;
+        margin: 10px 10px 10px 0px;
+    }
+}
+
+
+/* About the carousel */
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+/* Images invisible by default */
+.container {
+  display: none;
+}
+
+/* Making first image on carousel display by default */
+.initial {
+    display: block;
+}
+
+/* forward & Back buttons */
+.back, .forward {
+  cursor: pointer;
+  position: absolute;
+  top: 48%;
+  width: auto;
+  margin-top: -23px;
+  padding: 17px;
+  color: grey;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.4s ease;
+  border-radius: 0 5px 5px 0;
+  user-select: none;
+}
+
+/* Placing the forward button to the right */
+.forward {
+  right: 0;
+  border-radius: 4px 0 0 4px;
+}
+
+.back:hover, .forward:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption Info */
+.caption {
+  color: #ffffff;
+  font-size: 25px;
+  font-style: italic;
+  padding: 10px 14px;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Image numbering (x/7 etc) */
+.image_number {
+  color: #f2f2f3;
+  font-size: 14px;
+  padding: 10px 14px;
+  position: absolute;
+  top: 0;
+}
+
+/* The circles and indicators */
+.dots {
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  margin: 0 3px;
+  background-color: #acc;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease;
+}
+
+.enable, .dots:hover {
+  background-color: #717161;
+}
+
+/* Faint animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.4s;
+  animation-name: fade;
+  animation-duration: 1.4s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
+
+@keyframes fade {
+  from {opacity: .5}
+  to {opacity: 2}
+}
