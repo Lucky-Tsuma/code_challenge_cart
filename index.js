@@ -1,4 +1,12 @@
-// Carousel
+// Grand total and discounted total for the cart
+const totals = {
+    "grand_total" : 0.0,
+    "totals_with_discount" : 0.0
+};
+
+// Items added to the cart
+const items = [];
+
 let slidePosition = 1;
 let slides = document.getElementsByClassName("container");
 let circles = document.getElementsByClassName("dots");
@@ -50,8 +58,17 @@ function getItem1Quantity() {
         }
         
         let totalWithDiscount = total - discount;
+
+        const item1 = {
+            "product_id" : "Id_1",
+            "quantity" : itemOneQuantity,
+            "total" : total,
+            "discount" : discount,
+            "total_with_discount" : totalWithDiscount
+        };
+
+        items.push(item1);
         
-        // window.alert(`product_id_1 Quantity:${itemOneQuantity} Total:${total} Discount:${discount} TotalWDiscount:${totalWithDiscount}`);
     } else {
         window.alert("0 items selected. Cannot add to cart");
     }
@@ -76,8 +93,17 @@ function getItem2Quantity() {
         }
         
         let totalWithDiscount = total - discount;
+
+        const item2 = {
+            "product_id" : "Id_2",
+            "quantity" : itemTwoQuantity,
+            "total" : total,
+            "discount" : discount,
+            "total_with_discount" : totalWithDiscount
+        };
+
+        items.push(item2);
         
-        // window.alert(`product_id_2 Quantity:${itemTwoQuantity} Total:${total} Discount:${discount} TotalWDiscount:${totalWithDiscount}`);
     } else {
         window.alert("0 items selected. Cannot add to cart");
     }
@@ -101,11 +127,29 @@ function getItem3Quantity() {
         }
         
         let totalWithDiscount = total - discount;
+
+        const item3 = {
+            "product_id" : "Id_3",
+            "quantity" : itemThreeQuantity,
+            "total" : total,
+            "discount" : discount,
+            "total_with_discount" : totalWithDiscount
+        };
+
+        items.push(item3);
         
-        // window.alert(`product_id_3 Quantity:${itemThreeQuantity} Total:${total} Discount:${discount} TotalWDiscount:${totalWithDiscount}`);
     } else {
         window.alert("0 items selected. Cannot add to cart");
     }
+}
+
+function showTotals() {
+    console.log(items);
+    for(let x = 0; x < items.length; x++) {
+        totals["grand_total"] += items[x]["total"];
+        totals["totals_with_discount"] += items[x]["total_with_discount"];
+    }
+    console.log(totals);
 }
 
 
