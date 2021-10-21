@@ -46,7 +46,7 @@ function getItem1Quantity() {
     let discount; 
     
     if (itemOneQuantity > 0) {
-
+        
         if (itemOneQuantity > 50) {
             discount = (itemOneQuantity * 0.5).toFixed(2);
         } else if (itemOneQuantity > 25 && itemOneQuantity <= 50) {
@@ -58,16 +58,39 @@ function getItem1Quantity() {
         }
         
         let totalWithDiscount = total - discount;
-
+        
+        // Check if item is in the cart.
+        for (item of items) {
+            if(item["product_id"] == "Id_1") {
+                // item exists
+                const response = confirm("This item already exists in the cart. Do you want to update its current information?");
+                //  update its current information
+                if (response == true) {
+                    item["quantity"] = itemOneQuantity;
+                    item["total"] = total;
+                    item["discount"] = discount;
+                    item["total_with_discount"] = totalWithDiscount;
+                    return;
+                } else {
+                    //  do not update the current information
+                    return;
+                }
+                
+            }
+        }
+        
+        // Item is not in cart. Add it here.
         const item1 = {
             "product_id" : "Id_1",
+            "name" : "Bed 1",
             "quantity" : itemOneQuantity,
             "total" : total,
             "discount" : discount,
             "total_with_discount" : totalWithDiscount
         };
-
+        
         items.push(item1);
+        alert("Item added to cart");
         
     } else {
         window.alert("0 items selected. Cannot add to cart");
@@ -81,7 +104,7 @@ function getItem2Quantity() {
     let discount;
     
     if (itemTwoQuantity > 0) {
-
+        
         if (itemTwoQuantity > 50) {
             discount = (itemTwoQuantity * 0.5).toFixed(2);
         } else if (itemTwoQuantity > 25 && itemTwoQuantity <= 50) {
@@ -93,16 +116,38 @@ function getItem2Quantity() {
         }
         
         let totalWithDiscount = total - discount;
-
+        
+        // Check if item is in the cart.
+        for (item of items) {
+            if(item["product_id"] == "Id_2") {
+                // item exists
+                const response = confirm("This item already exists in the cart. Do you want to update its current information?");
+                //  update its current information
+                if (response == true) {
+                    item["quantity"] = itemOneQuantity;
+                    item["total"] = total;
+                    item["discount"] = discount;
+                    item["total_with_discount"] = totalWithDiscount;
+                    return;
+                } else {
+                    //  do not update the current information
+                    return;
+                }
+                
+            }
+        }
+        
         const item2 = {
             "product_id" : "Id_2",
+            "name" : "Bed 2",
             "quantity" : itemTwoQuantity,
             "total" : total,
             "discount" : discount,
             "total_with_discount" : totalWithDiscount
         };
-
+        
         items.push(item2);
+        alert("Item added to cart");
         
     } else {
         window.alert("0 items selected. Cannot add to cart");
@@ -115,7 +160,7 @@ function getItem3Quantity() {
     let discount;
     
     if (itemThreeQuantity > 0) {
-
+        
         if (itemThreeQuantity > 50) {
             discount = (itemThreeQuantity * 0.5).toFixed(2);
         } else if (itemThreeQuantity > 25 && itemThreeQuantity <= 50) {
@@ -127,16 +172,38 @@ function getItem3Quantity() {
         }
         
         let totalWithDiscount = total - discount;
-
+        
+        // Check if item is in the cart.
+        for (item of items) {
+            if(item["product_id"] == "Id_3") {
+                // item exists
+                const response = confirm("This item already exists in the cart. Do you want to update its current information?");
+                //  update its current information
+                if (response == true) {
+                    item["quantity"] = itemOneQuantity;
+                    item["total"] = total;
+                    item["discount"] = discount;
+                    item["total_with_discount"] = totalWithDiscount;
+                    return;
+                } else {
+                    //  do not update the current information
+                    return;
+                }
+                
+            }
+        }
+        
         const item3 = {
             "product_id" : "Id_3",
+            "name" : "Bed 3",
             "quantity" : itemThreeQuantity,
             "total" : total,
             "discount" : discount,
             "total_with_discount" : totalWithDiscount
         };
-
+        
         items.push(item3);
+        alert("Item added to cart");
         
     } else {
         window.alert("0 items selected. Cannot add to cart");
@@ -149,7 +216,13 @@ function showTotals() {
         totals["grand_total"] += items[x]["total"];
         totals["totals_with_discount"] += items[x]["total_with_discount"];
     }
+    totals["grand_total"] = totals["grand_total"].toFixed(2);
+    totals["totals_with_discount"] = totals["totals_with_discount"].toFixed(2);
+    
     console.log(totals);
+
+    const modal = document.querySelector(".modal_bg");
+    modal.classList.add("bg_active");
 }
 
 
