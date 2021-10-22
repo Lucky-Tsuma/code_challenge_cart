@@ -210,8 +210,8 @@ function getItem3Quantity() {
     }
 }
 
+
 function showTotals() {
-    console.log(items);
     for(let x = 0; x < items.length; x++) {
         totals["grand_total"] += items[x]["total"];
         totals["totals_with_discount"] += items[x]["total_with_discount"];
@@ -219,12 +219,32 @@ function showTotals() {
     totals["grand_total"] = totals["grand_total"].toFixed(2);
     totals["totals_with_discount"] = totals["totals_with_discount"].toFixed(2);
     
-    console.log(totals);
+    let container = document.getElementById("cart_row_con");
 
-    const modal = document.querySelector(".modal_bg");
-    modal.classList.add("bg_active");
+    items.map((data) => 
+        container.innerHTML += `<div class="cart_row">  
+        <span class="item_name">${data.name}</span>
+          <span class="quantity">${data.quantity}</span>
+          <span class="discount">${data.discount}</span>
+          <span class="total">${data.total}</span>
+          <span class="discounted_total">${data.total_with_discount}</span>
+          </div>`
+    );
+
+    container.innerHTML += `<div class="cart_totals">
+        <span class="total_no_discount">GRAND TOTAL: ${totals.grand_total}</span>
+        <span class="total_discounted">DISCOUNTED TOTAL: ${totals.totals_with_discount}</span>
+        </div>`;
+    
+    document.querySelector(".modal_bg").style.visibility = "visible";
 }
 
+function modalClose() {
+    document.querySelector(".modal_bg").style.visibility = "hidden";
+}
 
-
+function makeOrder() {
+    alert("Order successfully made");
+    location.reload();
+}
 
