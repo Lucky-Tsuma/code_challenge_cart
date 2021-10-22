@@ -123,11 +123,33 @@
       <button onclick="showTotals()">Purchase</button>
     </div>
   </div>
-<div class="modal_bg">
-  <div class="modal">
-    <h1>The div content goes here.</h1>
+  <div class="modal_bg">
+    <div class="modal">
+      <div class="modal_header">
+        <div class="heading"><strong>Cart Items</strong></div>
+        <div class="close"><span class = "modal_close" onclick="modalClose()"><strong>X</strong></span></div>
+      </div>
+      <div class="modal_content">
+        <div class="cart_row">
+          <span class="item_name">ITEM</span>
+          <span class="quantity">QUANTITY</span>
+          <span class="discount">DISCOUNT</span>
+          <span class="total">TOTAL</span>
+          <span class="discounted_total">DISCOUNTED_TOTAL</span>
+        </div>
+        <div class="cart_totals">
+          <span class="total_no_discount"></span>
+          <span class="total_discounted"></span>
+        </div>
+
+        <div id="cart_row_con"></div>
+      </div>
+      <div class="modal_footer">
+        <!-- <button class = "update">Update</button> -->
+        <button class = "order" onclick="makeOrder()">Order</button>
+      </div>
+    </div>
   </div>
-</div>
 </body>
 </html>
 
