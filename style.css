@@ -218,18 +218,70 @@ button {
   justify-content: center;
   align-items: center;
   visibility: hidden;
-  transition: visibility 0s, opacity 0.5s;
-}
-
-.bg_active {
-  visibility: visible;
-  opacity: 1;
 }
 
 .modal {
   position: relative;
-  background-color: #476b6b;
+  background-color: #e0ebeb;
   width: 85%;
   min-height: 25%;
 }
 
+.modal_header {
+  position:absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.heading {
+  flex: 1;
+  text-align: right;
+}
+
+.close {
+  flex: 1;
+  text-align: right;
+}
+
+.modal_close {
+  cursor: pointer;
+}
+
+.modal_content {
+  position: absolute;
+  top: 17px;
+  width: 100%
+}
+
+.modal_footer {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border-top: 1px solid black
+}
+
+.cart_row {
+  display: flex;
+  width: 100%;
+}
+
+.cart_totals {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.item_name, .quantity, .discount, .total, .discounted_total {
+  width: 15%;
+  border-bottom: 1px solid #818285;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+/* .delete_row {
+  cursor: pointer;
+} */
